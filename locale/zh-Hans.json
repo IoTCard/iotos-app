@@ -1,0 +1,155 @@
+{
+
+	"locale":{
+		"auto": "系统",
+		"en": "English",
+		"zh-hans": "简体中文",
+		"zh-hant": "繁体中文"
+	},	
+	
+	"schema":{
+		"name": "姓名",
+		"add": "新增",
+		"add-success": "新增成功"
+	},
+	"index":{
+		"title": "系统",
+		"home": "English",
+		"component": "组件",
+		"api": "API",
+		"schema": "Schema",
+		"demo": "uni-app 国际化演示",
+		"demo-description": "包含 uni-framework、manifest.json、pages.json、tabbar、页面、组件、API、Schema",
+		"detail": "详情",
+		"language": "语言",
+		"language-info": "语言信息",
+		"system-language": "系统语言",
+		"application-language": "应用语言",
+		"language-change-confirm": "应用此设置将重启App"
+	},
+	"api":{
+		"message": "提示"
+	},
+	"login_index":{
+		"pleaseEnter": "请输入 ",
+		"account": "账号",
+		"password": "密码",
+		"verificationCode": "验证码",
+		"logIn": "登录",
+		"signingInMeansAgreeing": "登录即代表同意",
+		"userAgreement": "用户协议",
+		"privacyAgreement": "隐私协议",
+		"loginPleaseBePatient": "登录中，请耐心等待"
+	},
+	
+	"work_index":{
+		"pleaseEnter": "请输入 ",
+		"account": "账号",
+		"password": "密码",
+		"verificationCode": "验证码",
+		"logIn": "登录",
+		"signingInMeansAgreeing": "登录即代表同意",
+		"userAgreement": "用户协议",
+		"privacyAgreement": "隐私协议",
+		"loginPleaseBePatient": "登录中，请耐心等待"
+	},
+	
+	"common":{
+		"pleaseEnter": "请输入 ",
+		"account": "账号",
+		"password": "密码",
+		"verificationCode": "验证码",
+		"logIn": "登录",
+		"signingInMeansAgreeing": "登录即代表同意",
+		"userAgreement": "用户协议",
+		"privacyAgreement": "隐私协议",
+		"loginPleaseBePatient": "登录中，请耐心等待",
+		"createTime": "创建时间",
+		"nickName": "昵称",
+		"sub":"提交",
+		"notNull":"不能为空!",
+		"upd":"修改",
+		"updSuccess": "修改成功",
+		"nikeName": "昵称",
+		"mail": "邮箱",
+		"success": "操作成功！",
+		"error": "操作失败……"
+	},
+	"work_index":{
+		"systemManagement": "系统管理",
+		"announcement": "公告",
+		"cardNumberInquiry": "卡号查询",
+		"intelligentDiagnosis": "智能诊断",
+		"usageRecord": "用量记录",
+		"sessionLog": "会话记录",
+		"businessHandling": "业务办理"
+	},
+	"mine_index":{
+		"about": "关于我们",
+		"settings": "应用设置",
+		"askExit": "确定注销并退出系统吗",
+		"construction": "模块建设中",
+		"clickLogin": "点击登录",
+		"username": "用户名",
+		"info": "个人信息",
+		"exchange": "交流群",
+		"service": "在线客服",
+		"feedback": "反馈社区",
+		"likeUs": "点赞我们",
+		"edit": "编辑资料",
+		"problem": "常见问题"
+		
+	},
+	"mine_info_index":{
+		"phoneNumber": "手机号码",
+		"mail": "邮箱",
+		"post": "岗位",
+		"role": "角色",
+		"gender": "性别",
+		"ask":{
+			"phoneNumber": "请输入正确的手机号码",
+			"mail": "请输入正确的邮箱地址"
+		}
+	},
+	"setting_index":{
+		"changePassword":"修改密码",
+		"checkUpdates":"检查更新",
+		"clearCache":"清理缓存",
+		"signOut":"退出登录"
+	},
+	"about_index":{
+		"version":"版本信息",
+		"ofEmail":"官方邮箱",
+		"weChat":"微信",
+		"noPublic":"公众号",
+		"ofWebsite":"官方网站"
+	},
+	"pwd_index":{
+		"ordPwd":"旧密码",
+		"newPwd":"新密码",
+		"verifyPwd":"确认密码"
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

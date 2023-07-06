@@ -1,0 +1,26 @@
+// 应用全局配置
+module.exports = {
+ // baseUrl: 'https://127.0.0.1/prod-api',
+   baseUrl: 'http://127.0.0.1/prod-api',
+  // 应用信息
+  appInfo: {
+    // 应用名称
+    name: "iotos-app",
+    // 应用版本
+    version: "0.1.0",
+    // 应用logo
+    logo: "/static/logo.png",
+    // 官方网站
+    site_url: "http://iotos.top",
+    // 政策协议
+    agreements: [{
+        title: "隐私政策",
+        url: "http://www.iotos.top/protocol.html"
+      },
+      {
+        title: "用户服务协议",
+        url: "http://www.iotos.top/protocol.html"
+      }
+    ]
+  }
+}

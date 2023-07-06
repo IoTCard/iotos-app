@@ -1,0 +1,153 @@
+{
+
+"locale":{
+		"auto": "系统",
+		"en": "English",
+		"zh-hans": "简体中文",
+		"zh-hant": "繁体中文"
+	},	
+
+"schema": {
+"name": "Name",
+"add": "Add",
+"add-success": "Add success"
+},
+"index": {
+"title": "System",
+"home": "English",
+"component": "Component",
+"api": "API",
+"schema": "Schema",
+"demo": "uni-app internationalization demo",
+"demo-description": "Contains uni-framework, manifest.json, pages.json, tabbar, pages, components, API, Schema",
+"detail": "Details",
+"language": "language",
+"language-info": "Language Information",
+"system-language": "system language",
+"application-language": "Application Language",
+"language-change-confirm": "Applying this setting will restart the app"
+},
+"api": {
+"message": "reminder"
+},
+"login_index": {
+"pleaseEnter": "Please enter",
+"account": "Account",
+"password": "password",
+"verificationCode": "Verification Code",
+"logIn": "Login",
+"signingInMeansAgreeing": "Signing in means agreeing",
+"userAgreement": "User Agreement",
+"privacyAgreement": "Privacy Agreement",
+"loginPleaseBePatient": "Login in progress, please be patient"
+},
+
+"work_index": {
+"pleaseEnter": "Please enter",
+"account": "Account",
+"password": "password",
+"verificationCode": "Verification Code",
+"logIn": "Login",
+"signingInMeansAgreeing": "Signing in means agreeing",
+"userAgreement": "User Agreement",
+"privacyAgreement": "Privacy Agreement",
+"loginPleaseBePatient": "Login in progress, please be patient"
+},
+
+"common": {
+"pleaseEnter": "Please enter",
+"account": "Account",
+"password": "password",
+"verificationCode": "Verification Code",
+"logIn": "Login",
+"signingInMeansAgreeing": "Signing in means agreeing",
+"userAgreement": "User Agreement",
+"privacyAgreement": "Privacy Agreement",
+"loginPleaseBePatient": "Login in progress, please be patient",
+"createTime": "Creation Time",
+"nickName": "nickname",
+"sub": "Submit",
+"notNull": "Cannot be empty!",
+"upd": "Modify",
+"updSuccess": "Updated successfully",
+"nikeName": "Nickname",
+"mail": "Mailbox"
+},
+"work_index": {
+"systemManagement": "System Management",
+"announcement": "Announcement",
+"cardNumberInquiry": "Card Number Inquiry",
+"intelligentDiagnosis": "Intelligent Diagnosis",
+"usageRecord": "Usage Record",
+"sessionLog": "Session Log",
+"businessHandling": "Business Handling"
+},
+"mine_index": {
+"about": "About us",
+"settings": "App Settings",
+"askExit": "Are you sure you want to log out and exit the system?",
+"construction": "Module construction",
+"clickLogin": "Click to log in",
+"username": "Username",
+"info": "Personal Information",
+"exchange": "Exchange Group",
+"service": "Online customer service",
+"feedback": "Feedback Community",
+"likeUs": "like us",
+"edit": "Edit Data",
+"problem": "FAQ"
+
+},
+"mine_info_index": {
+"phoneNumber": "Mobile phone number",
+"mail": "Mailbox",
+"post": "post",
+"role": "Role",
+"gender": "gender",
+"ask":{
+"phoneNumber": "Please enter a correct phone number",
+"mail": "Please enter a valid email address"
+}
+},
+"setting_index": {
+"changePassword": "Change Password",
+"checkUpdates": "Check for updates",
+"clearCache": "clear cache",
+"signOut": "Log out"
+},
+"about_index": {
+"version": "version information",
+"ofEmail": "official email",
+"weChat": "WeChat",
+"noPublic": "public account",
+"ofWebsite": "Official Website"
+},
+"pwd_index": {
+"ordPwd": "old password",
+"newPwd": "New Password",
+"verifyPwd": "Confirm password"
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

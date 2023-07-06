@@ -1,0 +1,153 @@
+{
+
+	"locale":{
+		"auto": "系統",
+		"en": "English",
+		"zh-hans": "简体中文",
+		"zh-hant": "繁體中文"
+	},	
+	
+	"schema":{
+		"name": "姓名",
+		"add": "新增",
+		"add-success": "新增成功"
+	},
+	"index":{
+		"title": "系統",
+		"home": "English",
+		"component": "組件",
+		"api": "API",
+		"schema": "Schema",
+		"demo": "uni-app 國際化演示",
+		"demo-description": "包含 uni-framework、manifest.json、pages.json、tabbar、頁面、組件、API、Schema",
+		"detail": "詳情",
+		"language": "語言",
+		"language-info": "語言信息",
+		"system-language": "系統語言",
+		"application-language": "應用語言",
+		"language-change-confirm": "應用此設置將重啟App"
+	},
+	"api":{
+		"message": "提示"
+	},
+	"login_index":{
+		"pleaseEnter": "請輸入 ",
+		"account": "賬號",
+		"password": "密碼",
+		"verificationCode": "驗證碼",
+		"logIn": "登錄",
+		"signingInMeansAgreeing": "登錄即代表同意",
+		"userAgreement": "用戶協議",
+		"privacyAgreement": "隱私協議",
+		"loginPleaseBePatient": "登錄中，請耐心等待"
+	},
+	
+	"work_index":{
+		"pleaseEnter": "請輸入 ",
+		"account": "賬號",
+		"password": "密碼",
+		"verificationCode": "驗證碼",
+		"logIn": "登錄",
+		"signingInMeansAgreeing": "登錄即代表同意",
+		"userAgreement": "用戶協議",
+		"privacyAgreement": "隱私協議",
+		"loginPleaseBePatient": "登錄中，請耐心等待"
+	},
+	
+	"common":{
+		"pleaseEnter": "請輸入 ",
+		"account": "賬號",
+		"password": "密碼",
+		"verificationCode": "驗證碼",
+		"logIn": "登錄",
+		"signingInMeansAgreeing": "登錄即代表同意",
+		"userAgreement": "用戶協議",
+		"privacyAgreement": "隱私協議",
+		"loginPleaseBePatient": "登錄中，請耐心等待",
+		"createTime": "創建時間",
+		"nickName": "暱稱",
+		"sub":"提交",
+		"notNull":"不能為空!",
+		"upd":"修改",
+		"updSuccess": "修改成功",
+		"nikeName": "暱稱",
+		"mail": "郵箱"
+	},
+	"work_index":{
+		"systemManagement": "系統管理",
+		"announcement": "公告",
+		"cardNumberInquiry": "卡號查詢",
+		"intelligentDiagnosis": "智能診斷",
+		"usageRecord": "用量記錄",
+		"sessionLog": "會話記錄",
+		"businessHandling": "業務辦理"
+	},
+	"mine_index":{
+		"about": "關於我們",
+		"settings": "應用設置",
+		"askExit": "確定註銷並退出系統嗎",
+		"construction": "模塊建設中",
+		"clickLogin": "點擊登錄",
+		"username": "用戶名",
+		"info": "個人信息",
+		"exchange": "交流群",
+		"service": "在線客服",
+		"feedback": "反饋社區",
+		"likeUs": "點讚我們",
+		"edit": "編輯資料",
+		"problem": "常見問題"
+		
+	},
+	"mine_info_index":{
+		"phoneNumber": "手機號碼",
+		"mail": "郵箱",
+		"post": "崗位",
+		"role": "角色",
+		"gender": "性別",
+		"ask":{
+			"phoneNumber": "請輸入正確的手機號碼",
+			"mail": "請輸入正確的郵箱地址"
+		}
+	},
+	"setting_index":{
+		"changePassword":"修改密碼",
+		"checkUpdates":"檢查更新",
+		"clearCache":"清理緩存",
+		"signOut":"退出登錄"
+	},
+	"about_index":{
+		"version":"版本信息",
+		"ofEmail":"官方郵箱",
+		"weChat":"微信",
+		"noPublic":"公眾號",
+		"ofWebsite":"官方網站"
+	},
+	"pwd_index":{
+		"ordPwd":"舊密碼",
+		"newPwd":"新密碼",
+		"verifyPwd":"確認密碼"
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
