@@ -87,47 +87,53 @@ IoTOS-App 移动解决方案，采用uniapp框架，一份代码多终端适配�
 
 # 六、项目展示
 
-- 登录页
+## 登录页
 
 ![loginLgChange](readme-pic/cn/loginLgChange.jpg)
 
-- 工作台
+## 工作台
 
 ![workIndex](readme-pic/cn/work_index_app.png)
 
-- 我的
+## 我的
 
 ![my](readme-pic/cn/my.png)
 
-- 语言切换
+## 语言切换
 
 ![lgChange](readme-pic/cn/lgChange.jpg)
 
-- 登录公告与通知{#app-notify}
+## 登录公告与通知
 
 ![notify](readme-pic/cn/notify.jpg)
 
-- 卡信息查询{#app-cardInfo_app}
+## 卡信息查询
 
 ![cardInfo_app](readme-pic/cn/cardInfo_app.png)
 
-- 会话记录{#app-cardSession_app}
+## 会话记录
 
 ![cardSession_app](readme-pic/cn/cardSession_app.png)
 
-- 智能诊断{#app-diagnosis_app}
+## 智能诊断
 
 ![diagnosis_app](readme-pic/cn/diagnosis_app.png)
 
-- 用量记录{#app-usedRecord_app}
+## 用量记录
 
 ![usedRecord_app](readme-pic/cn/usedRecord_app.png)
 
-- 业务办理{#app-cardApiBuinessHandIing_app}
+## 业务办理
 
 ![cardApiBuinessHandIing_app](readme-pic/cn/cardApiBuinessHandIing_app.png)
 
-- 通知消息{#app-notify_app}
+## 通知消息
+
+> 查看更新日志页面
+
+![iotos_app](readme-pic/cn/iotos_app.png)
+
+## 通知消息
 
 > 暂未实现 仅完善了单界面ui
 

@@ -15,11 +15,11 @@
 English / [中文](README.md)
 
 <div class="shields-wrapper">
-<a target="_blank" class="shields-wrapper-image" href='https://github.com/IoTCard/iotos-app'><img alt="GitHub license" src="https://img .shields.io/github/license/IoTCard/iotos-app?style=flat-square&logo=github&color=616ae5"></a>
-           <a target="_blank" class="shields-wrapper-image" href='https://github.com/IoTCard/iotos-app'><img alt="GitHub stars" src="https://img .shields.io/github/stars/IoTCard/iotos-app?style=flat-square&logo=github&color=616ae5"></a>
-           <a target="_blank" class="shields-wrapper-image" href='https://github.com/IoTCard/iotos-app'><img alt="GitHub forks" src="https://img .shields.io/github/forks/IoTCard/iotos-app?style=flat-square&logo=github&color=616ae5"></a>
-<a target="_blank" href='https://gitee.com/chinaiot/iotos-app/stargazers'><img src='https://gitee.com/chinaiot/iotos-app/badge/star. svg?theme=dark' alt='star'></img></a>
-<a target="_blank" href='https://gitee.com/chinaiot/iotos-app/members'><img src='https://gitee.com/chinaiot/iotos-app/badge/fork. svg?theme=dark' alt='fork'></img></a>
+<a target="_blank" class="shields-wrapper-image" href='https://github.com/IoTCard/iotos-app'><img  alt="GitHub license" src="https://img.shields.io/github/license/IoTCard/iotos-app?style=flat-square&logo=github&color=616ae5"></a>
+          <a target="_blank" class="shields-wrapper-image" href='https://github.com/IoTCard/iotos-app'><img  alt="GitHub stars" src="https://img.shields.io/github/stars/IoTCard/iotos-app?style=flat-square&logo=github&color=616ae5"></a>
+          <a target="_blank" class="shields-wrapper-image" href='https://github.com/IoTCard/iotos-app'><img alt="GitHub forks" src="https://img.shields.io/github/forks/IoTCard/iotos-app?style=flat-square&logo=github&color=616ae5"></a>
+<a target="_blank" href='https://gitee.com/chinaiot/iotos-app/stargazers'><img src='https://gitee.com/chinaiot/iotos-app/badge/star.svg?theme=dark' alt='star'></img></a>
+<a target="_blank" href='https://gitee.com/chinaiot/iotos-app/members'><img src='https://gitee.com/chinaiot/iotos-app/badge/fork.svg?theme=dark' alt='fork'></img></a>
 </div>
 
 
@@ -87,48 +87,54 @@ If you want to join our open source exchange group, have any ideas, opinions or 
 
 # Six, project display
 
-- login page
+## login page
 
 ![loginLgChange](readme-pic/cn/loginLgChange.jpg)
 
-- workbench
+## Workbench
 
 ![workIndex](readme-pic/cn/work_index_app.png)
 
-- mine
+## mine
 
 ![my](readme-pic/cn/my.png)
 
-- language switching
+## Language switching
 
 ![lgChange](readme-pic/cn/lgChange.jpg)
 
-- Login announcements and notifications {#app-notify}
+## Login announcements and notifications
 
 ![notify](readme-pic/cn/notify.jpg)
 
-- Card information inquiry {#app-cardInfo_app}
+## Card information query
 
 ![cardInfo_app](readme-pic/cn/cardInfo_app.png)
 
-- session recording {#app-cardSession_app}
+## session recording
 
 ![cardSession_app](readme-pic/cn/cardSession_app.png)
 
-- Smart Diagnosis {#app-diagnosis_app}
+## Intelligent diagnosis
 
 ![diagnosis_app](readme-pic/cn/diagnosis_app.png)
 
-- Usage Record {#app-usedRecord_app}
+## usage record
 
 ![usedRecord_app](readme-pic/cn/usedRecord_app.png)
 
-- Business Handling {#app-cardApiBuinessHandIing_app}
+## Business handling
 
 ![cardApiBuinessHandIing_app](readme-pic/cn/cardApiBuinessHandIing_app.png)
 
-- Notification message {#app-notify_app}
+## Notification message
+
+> View Changelog page
+
+![iotos_app](readme-pic/cn/iotos_app.png)
+
+## Notification message
 
 > Not implemented yet, only improved single-interface ui
 
-![notify_app](readme-pic/cn/notify_app.png)
+![notify_app](readme-pic/en/notify_app.png)
