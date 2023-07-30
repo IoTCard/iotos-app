@@ -57,7 +57,7 @@ const user = {
 		  try {
 		  	//同步语言喜好
 		  	let lgCode = res.lgCode;
-		  	console.log(lgCode)
+		  	//console.log(lgCode)
 		  	uni.setStorageSync("lgCode",lgCode);
 		  	let lang = 'auto';
 		  	if(lgCode=='zh-CN'){
@@ -67,10 +67,10 @@ const user = {
 		  	}else if(lgCode=='en'){
 		  	  lang = "en";
 		  	}
-			console.log(lang)
+			//console.log(lang)
 		  	uni.setLocale(lang);
 		  	this.$i18n.locale = lang;
-		  	console.log(lang)
+		  	//console.log(lang)
 		  } catch (e) {
 		  //console.log(e)
 		  }

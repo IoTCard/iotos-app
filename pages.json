@@ -7,8 +7,7 @@
   }, {
     "path": "pages/index",
     "style": {
-      "navigationBarTitleText": "IoTOS",
-      "navigationStyle": "custom"
+      "navigationBarTitleText": "首頁"
     }
   }, {
     "path": "pages/work/index",
@@ -65,28 +64,59 @@
     "style": {
       "navigationBarTitleText": "浏览文本"
     }
-  }],
+  }, {
+    "path": "pages/work/connect/card/diagnosis",
+    "style": {
+      "navigationBarTitleText": "智能诊断"
+    }
+  },{
+    "path": "pages/notify/index",
+    "style": {
+      "navigationBarTitleText": "消息"
+    }
+  },{
+    "path": "pages/work/connect/card/cardInfoDetals",
+    "style": {
+      "navigationBarTitleText": "卡信息查询"
+    }
+  },{
+    "path": "pages/work/connect/card/usedRecord",
+    "style": {
+      "navigationBarTitleText": "用量记录"
+    }
+  },{
+    "path": "pages/work/connect/card/cardSession",
+    "style": {
+      "navigationBarTitleText": "会话记录"
+    }
+  },{
+    "path": "pages/work/connect/card/cardApiBusinessHandling",
+    "style": {
+      "navigationBarTitleText": "业务办理"
+    }
+  },{
+    "path": "pages/IoTOS",
+    "style": {
+      "navigationBarTitleText": "IoTOS"
+    }
+  }
+  ],
   "tabBar": {
-    "color": "#000000",
-    "selectedColor": "#000000",
-    "borderStyle": "white",
-    "backgroundColor": "#ffffff",
+    "height":"0px!important",
+    "width": "0px!important",
+    "bottom":"0",
+    "display":"none",
     "list": [{
-        "pagePath": "pages/index",
-        "iconPath": "static/images/tabbar/home.png",
-        "selectedIconPath": "static/images/tabbar/home_.png",
-        "text": "首页"
-      }, {
-        "pagePath": "pages/work/index",
-        "iconPath": "static/images/tabbar/work.png",
-        "selectedIconPath": "static/images/tabbar/work_.png",
-        "text": "工作台"
-      }, {
-        "pagePath": "pages/mine/index",
-        "iconPath": "static/images/tabbar/mine.png",
-        "selectedIconPath": "static/images/tabbar/mine_.png",
-        "text": "我的"
-      }
+      "pagePath": "pages/index"
+    }, {
+      "pagePath": "pages/work/index"
+    }, {
+      "pagePath": "pages/mine/index"
+    },  {
+      "pagePath": "pages/notify/index"
+    }, {
+      "pagePath": "pages/IoTOS"
+    }
     ]
   },
   "globalStyle": {

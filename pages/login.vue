@@ -1,11 +1,14 @@
 <template>
   <view class="normal-login-container">
+	<div v-show="showHint">
+		<u-alert :description="$t('common.pleaseRead')"  type="warning" ></u-alert>
+	</div>
     <view class=" align-center justify-center flex">
 		<image style="width: 100px;height: 130px;" :src="globalConfig.appInfo.logo" mode="widthFix"></image>
     </view>
 	 <view class="logo-content align-center justify-center flex">
-		 
-		 <text class="title">IoTOS-App 
+
+		 <text class="title">IoTOS-App
 		 <img style="width: 35px;" @click="show=true" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElD
 		 ICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NW
 		 Ry8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyB0PSIxNjg3NTc5NjE3NTU4IiBjbGFzcz0iaWNvbiIg
@@ -40,25 +43,25 @@
 		 NCAzLjUtNS41IDcgNC4xIDE1LjMgOS40IDMwLjEgMTUuOSA0NC4zIDAuMyAwLjcgMC44IDEuMyAx
 		 LjQgMS45IDE0LjMgMTIuNSAyNS41IDI4LjYgMzIuMSA0Ni44IDYuNSAwLjggMy43IDAuNSAxMC4y
 		 IDEuMyAxOS41LTI5LjkgMzIuOC02MS40IDQwLTk0LjQgMC44LTMuNi0xLjktNi45LTUuNC02Ljl6
-		 IiBmaWxsPSIjM2JhNGZmIiBwLWlkPSIxMzY2Ij48L3BhdGg+PC9zdmc+"> 
+		 IiBmaWxsPSIjM2JhNGZmIiBwLWlkPSIxMzY2Ij48L3BhdGg+PC9zdmc+">
 		 </text>
-		  
+
 	</view>
-	 
-		
-	
-	
-	
-	
+
+
+
+
+
+
 	<u-popup :show="show" :round="10" mode="bottom" @close="show=false" >
 		<view>
 			<LangSelect/>
 		</view>
 	</u-popup>
-	
 
-	
-    <view class="login-form-content">
+
+
+   <view class="login-form-content">
       <view class="input-item flex align-center">
         <view class="iconfont icon-user icon"></view>
         <input v-model="loginForm.username" class="input" type="text" :placeholder="login_lCode.pleaseEnter+login_lCode.account" maxlength="30" />
@@ -67,24 +70,64 @@
         <view class="iconfont icon-password icon"></view>
         <input v-model="loginForm.password" type="password" class="input" :placeholder="login_lCode.pleaseEnter+login_lCode.password" maxlength="20" />
       </view>
-    <view class="input-item flex align-center" style="width: 60%;margin: 0px;" v-if="captchaEnabled">
-        <view class="iconfont icon-code icon"></view>
-         <input v-model="loginForm.code" type="number" class="input" :placeholder="login_lCode.pleaseEnter+login_lCode.verificationCode" maxlength="4" />
-      	<view class="login-code">
-          <image :src="codeUrl" @click="getCode" class="login-code-img"></image>
-        </view  >
+
+
+     <view class="input-item flex align-center" style="width: 60%;margin: 0px;" v-if="captchaEnabled">
+       <view class="iconfont icon-code icon"></view>
+       <input v-model="loginForm.code" type="number" class="input" :placeholder="login_lCode.pleaseEnter+login_lCode.verificationCode" maxlength="4" />
+       <view class="login-code">
+         <image :src="codeUrl" @click="getCode" class="login-code-img"></image>
+       </view  >
      </view>
+
+     <view class="action-btn">
+       <button @click="handleLogin" class="login-btn cu-btn block bg-blue lg round">{{  login_lCode.logIn }}</button>
+     </view>
+   </view>
+
+     <!--
+     <u-popup :show="dialogVisible" mode="center" >
+        人机识别
+
+        <div style="color: red;position: center;"> 扫码下方二维码，回复【iotos】</div>
+        <a href="https://mp.weixin.qq.com/s/-rNuGZlG2BEYK759SYLGNg"><div style="color: red;text-decoration: underline;">获得「验证码 + 部署教程 + 项目交流群」三件套</div></a>
+        <img style="width: 360px;float: left;height: 200px;;" src="http://www.iotos.top/gzhewm.gif"/>
+        <view class="input-item flex align-center">
+          <input v-model="loginForm.code" @keyup.enter.native="handleLogin" ref="code"
+                 :placeholder="login_lCode.verificationCode"/>
+        </view>
+        <view class="action-btn">
+          <button  style="width: 360px;" type="primary" @click="handleLogin">确 定</button>
+        </view>
+      </u-popup>
+      -->
       <view class="action-btn">
         <button @click="handleLogin" class="login-btn cu-btn block bg-blue lg round">{{  login_lCode.logIn }}</button>
       </view>
-    </view>
 
-	
+
     <view class="xieyi text-center">
-      <text class="text-grey1">{{  login_lCode.signingInMeansAgreeing }}</text>
-      <text @click="handleUserAgrement" class="text-blue">《{{  login_lCode.userAgreement }}》</text>
+      <text >
+		   <u-checkbox-group
+				  v-model="checkboxValue1"
+				  placement="column"
+				  @change="checkboxChange"
+				  style="float: left;margin-left: 13%;"
+			  >
+				  <u-checkbox
+					  :customStyle="{marginBottom: '8px'}"
+					  v-for="(item, index) in checkboxList1"
+					  :key="index"
+					  :label="item.name"
+					  :name="item.value"
+				  >
+				  </u-checkbox>
+			  </u-checkbox-group>
+	   </text>
+      <text @click="handleUserAgrement"  class="text-blue">《{{  login_lCode.userAgreement }}》</text>
       <text @click="handlePrivacy" class="text-blue">《{{  login_lCode.privacyAgreement }}》</text>
     </view>
+
   </view>
 </template>
 
@@ -97,7 +140,7 @@
     data() {
       return {
 		show: false,
-		  
+
         codeUrl: "",
         captchaEnabled: true,
         globalConfig: getApp().globalData.config,
@@ -108,6 +151,7 @@
           uuid: ''
         },
 		dialogVisible: false,
+		showHint: false,
 		login_lCode:{
 			pleaseEnter: this.$t('login_index.pleaseEnter'),
 			account: this.$t('login_index.account'),
@@ -118,14 +162,38 @@
 			userAgreement: this.$t('login_index.userAgreement'),
 			privacyAgreement: this.$t('login_index.privacyAgreement'),
 			loginPleaseBePatient:this.$t('login_index.loginPleaseBePatient'),
-		}
-		
+		},
+
+	  checkboxList1: [{
+			name: this.$t("common.approved"),
+			value: 'approved',
+			disabled: false
+		  }
+	  ],
+	  checkboxValue1: [],
+
+
       }
     },
     created() {
       this.getCode()
     },
     methods: {
+
+		loginLoad(){
+			if(this.checkboxValue1!=null && this.checkboxValue1.length>0){
+				this.showHint = false;
+				this.dialogVisible = true;
+			}else{
+				this.showHint = true;
+			}
+		},
+
+
+		checkboxChange(n) {
+			//console.log('change', n);
+		},
+
       // 隐私协议
       handlePrivacy() {
         let site = this.globalConfig.appInfo.agreements[0]
@@ -149,11 +217,11 @@
       // 登录方法
       async handleLogin() {
         if (this.loginForm.username === "") {
-          this.$modal.msgError(this.login_lCode.pleaseEnter+this.login_lCode.account)
+          this.$modal.showToast(this.login_lCode.pleaseEnter+this.login_lCode.account)
         } else if (this.loginForm.password === "") {
-          this.$modal.msgError(this.login_lCode.pleaseEnter+this.login_lCode.password)
+          this.$modal.showToast(this.login_lCode.pleaseEnter+this.login_lCode.password)
         } else if (this.loginForm.code === "" && this.captchaEnabled) {
-          this.$modal.msgError(this.login_lCode.pleaseEnter+this.login_lCode.verificationCode)
+          this.$modal.showToast(this.login_lCode.pleaseEnter+this.login_lCode.verificationCode)
         } else {
           this.$modal.loading(this.login_lCode.loginPleaseBePatient)
           this.pwdLogin()
@@ -163,8 +231,8 @@
       async pwdLogin() {
         this.$store.dispatch('Login', this.loginForm).then(() => {
           this.$modal.closeLoading();
-		  uni.setStorageSync("userName", this.loginForm.username);
-		  
+		       uni.setStorageSync("userName", this.loginForm.username);
+
           this.loginSuccess();
         }).catch(() => {
           if (this.captchaEnabled) {
@@ -174,10 +242,10 @@
       },
       // 登录成功后，处理函数
       loginSuccess(result) {
-		  console.log(result)
+        uni.setStorageSync('selectedIndex', 2);
         // 设置用户信息
         this.$store.dispatch('GetInfo').then(res => {
-          this.$tab.reLaunch('/pages/index')
+          this.$tab.reLaunch('/pages/IoTOS')
         })
       }
     }
@@ -244,11 +312,11 @@
         color: #333;
         margin-top: 20px;
       }
-      
+
       .login-code {
         height: 38px;
         float: right;
-      
+
         .login-code-img {
           height: 38px;
           position: absolute;

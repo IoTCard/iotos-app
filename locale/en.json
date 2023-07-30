@@ -1,133 +1,320 @@
 {
 
-"locale":{
-		"auto": "系统",
+	"tabbar": {
+		"index": "Home",
+		"work": "Workbench",
+		"notify": "Message",
+		"mine": "mine"
+	},
+	"cardApiBusinessHandling": {
+		"title": "Business Handling",
+		"openClose": "Shutdown & disconnect network",
+		"gprsReset": "Network Reset",
+		"shutdown": "Disconnect the network",
+		"stop": "stop and resume",
+		"flexibleChange": "flexible change status",
+		"tip": {
+			"reset": "When the Internet access function is abnormal, you can reset and restore the GPRS Internet access function by calling this interface; (execute when you select Yes)",
+			"openStop": "Stop and restart: execute the stop and restart operation on the card number; (PS: Long-term shutdown may result in a shutdown insurance fee, and may cancel the account card number! It depends on the upstream operator!)",
+			"openClose": "Disconnect from the network: perform the operation of closing the network connection and opening the network connection for the card number; (PS: this function is similar to opening and closing mobile phone data traffic.)",
+			"flexibleChange": "Flexibly change the status of the card: adapt to some upstream APIs, (PS: and the reason for the downtime is an active application for downtime, the machine can only be restarted. For other reasons, you need to contact the account manager to deal with it!)",
+			"textareaP": "Please enter the ICCID multi-card numbers separated by newlines! \n Please go to the background operation if there are more than 100 pieces of data at a time!"
+		},
+		"ask":{
+			"upd": "Whether to confirm the execution of the upload card number",
+			"txUpd": "Whether to confirm the card number execution"
+		},
+		"rs": {
+			"flexibleChange": "Please select the state that needs to be changed flexibly!",
+			"openClose": "Please select the type of operation that needs to shut down or disconnect the network!",
+			"gprsReset": "Please choose whether to perform network reset!",
+			"iccids": "Please enter the card number you need to operate"
+		}
+	},
+	"usedRecord": {
+		"MMdd": "Date",
+		"month_used": "monthly usage",
+		"day_used": "Daily usage"
+	},
+	"card_index": {
+		"editCard": "Update Card Information",
+		"ask": {
+			"upd": "Confirm update",
+			"cardDivid_2": "The piece of data is divided into"
+		},
+		"updForm": {
+			"remarks": "Remarks:",
+			"updateNotFilled": "Update not filled attributes:",
+			"deliver_date": "Delivery date:",
+			"customize_grouping": "Customize grouping:"
+		}
+	},
+	"cardInfoDetails": {
+		"copyCardInfo": "Copy basic information",
+		"tFrom":{
+			"operator": "operator",
+			"roaming_country": "Roaming country",
+			"internet_signal": "Internet signal",
+			"ip_attribution": "IP attribution",
+			"status_show_id": "Card Status",
+			"status_id": "status description",
+			"type": "card type",
+			"network_type": "Network type",
+			"nedd_real_name": "A real name is required",
+			"w_real_name": "Real name",
+			"deliver_date": "delivery date",
+			"activate_date": "Activation time",
+			"traffic_sync_time": "Traffic synchronization time",
+			"state_sync_time": "State synchronization time",
+			"channel_id": "Channel to which it belongs",
+			"package_id": "belonging tariff group",
+			"u_code": "Cardholder",
+			"w_polling": "Polling",
+			"automatic_renewal": "Automatic renewal",
+			"w_sms": "SMS",
+			"w_voice": "Voice",
+			"w_network_break": "Unsubscribed network break",
+			"shutdown_threshold": "shutdown threshold",
+			"prodinsteff_time": "effective time",
+			"prodinstexp_time": "Expiration time",
+			"connection_status": "Network Status",
+			"w_pool": "Traffic Pool",
+			"balance": "pre-deposited balance",
+			"payment_key": "payment password",
+			"customize_grouping": "Grouping",
+			"remarks": "Remarks",
+			"first_time_using": "First time using",
+			"create_time": "Create time",
+			"storage_date": "Storage date",
+			"delivery_date": "delivery date"
+		}
+	},
+	"diagnosis": {
+		"oneDiagnosis": "One-key Diagnosis",
+		"rs": {
+			"value":"Query card number",
+			"length": "Please enter a matching card number greater than 4 digits!"
+		}
+	},
+	"dsEcV5":{
+		"dTitle": {
+			"i_1": "diagnosing",
+			"i_2":"Diagnostic completed"
+		},
+		"table": {
+			"i_1": "Service Type",
+			"i_2": "APN",
+			"i_3": "Status",
+			"i_4":"Status change time"
+		},
+		"te1":{
+			"title":"SIM card status",
+			"i_1": "Card Status",
+			"i_2": "Downtime reason",
+			"i_3": "Device Status",
+			"i_3top": "Power on means the device is connected and attached to the base station",
+			"i_4": "Whether to freeze",
+			"solution": "The status of the SIM card is testable, pending activation, activated and can communicate normally"
+		},
+		"te2":{
+			"title": "Communication Services",
+			"titletop":"Due to network fluctuations and delays, there may be some errors in the results, which are for reference only. It is recommended to refer to the actual status of the terminal"
+		},
+		"te3":{
+			"title": "Policy Restrictions",
+			"i_1": "super area",
+			"i_2": "Machine card separation",
+			"i_3":"Restricted area:"
+		},
+		"te4": {
+			"title":"Status Change Record"
+		},
+		"suggestedSolution":"Suggested solution:"
+
+	},
+
+	"cardInfoModule": {
+		"cardSession": "Session Information",
+		"cardApiBusiness": "Change Record",
+		"cbefore": "before the change",
+		"cafterward": "After the change",
+		"source": "source",
+		"onlyCreateDate": "Filter recurring session time",
+		"last30Days": "Last 30 days",
+		"flowRecord": "Flow Usage",
+		"session": {
+			"accessMode": "Wireless Access Mode",
+			"accessMethod": "Access Method",
+			"onlineStatus": "Online Status",
+			"iPAddress": "IP Address",
+			"hint1": "Please check the API information (there will be no online records if there is no usage generated!)",
+			"hint2": "Only supports upstream open query session information API acquisition",
+			"error1": "The session information has not been obtained yet"
+		},
+		"oneLink_ECV5": {
+			"label_0": "APN",
+			"label_1": "Online Status",
+			"label_2": "IP",
+			"label_3": "IPV6 Address Prefix",
+			"label_4": "IPV6 address interface",
+			"label_5": "Session creation time",
+			"label_6": "Access method",
+			"label_7": "Platform record time"
+		}
+	},
+
+
+	"myTabbar": {
+		"t1": "Home Page",
+		"t2": "Workbench",
+		"t3": "Message",
+		"t4": "My"
+	},
+
+
+	"locale": {
+		"auto": "system",
 		"en": "English",
-		"zh-hans": "简体中文",
-		"zh-hant": "繁体中文"
-	},	
+		"zh-hans": "Simplified Chinese",
+		"zh-hant": "Traditional Chinese"
+	},
 
-"schema": {
-"name": "Name",
-"add": "Add",
-"add-success": "Add success"
-},
-"index": {
-"title": "System",
-"home": "English",
-"component": "Component",
-"api": "API",
-"schema": "Schema",
-"demo": "uni-app internationalization demo",
-"demo-description": "Contains uni-framework, manifest.json, pages.json, tabbar, pages, components, API, Schema",
-"detail": "Details",
-"language": "language",
-"language-info": "Language Information",
-"system-language": "system language",
-"application-language": "Application Language",
-"language-change-confirm": "Applying this setting will restart the app"
-},
-"api": {
-"message": "reminder"
-},
-"login_index": {
-"pleaseEnter": "Please enter",
-"account": "Account",
-"password": "password",
-"verificationCode": "Verification Code",
-"logIn": "Login",
-"signingInMeansAgreeing": "Signing in means agreeing",
-"userAgreement": "User Agreement",
-"privacyAgreement": "Privacy Agreement",
-"loginPleaseBePatient": "Login in progress, please be patient"
-},
+	"schema": {
+		"name": "Name",
+		"add": "Add",
+		"add-success": "Add success"
+	},
+	"index": {
+		"title": "System",
+		"home": "English",
+		"component": "Component",
+		"api": "API",
+		"schema": "Schema",
+		"demo": "uni-app internationalization demo",
+		"demo-description": "Contains uni-framework, manifest.json, pages.json, tabbar, pages, components, API, Schema",
+		"detail": "Details",
+		"language": "language",
+		"language-info": "Language Information",
+		"system-language": "system language",
+		"application-language": "Application Language",
+		"language-change-confirm": "Applying this setting will restart the app"
+	},
+	"api": {
+		"message": "reminder"
+	},
+	"login_index": {
+		"pleaseEnter": "Please enter",
+		"account": "Account",
+		"password": "password",
+		"verificationCode": "Verification Code",
+		"logIn": "Login",
+		"signingInMeansAgreeing": "Signing in means agreeing",
+		"userAgreement": "User Agreement",
+		"privacyAgreement": "Privacy Agreement",
+		"loginPleaseBePatient": "Login in progress, please be patient"
+	},
 
-"work_index": {
-"pleaseEnter": "Please enter",
-"account": "Account",
-"password": "password",
-"verificationCode": "Verification Code",
-"logIn": "Login",
-"signingInMeansAgreeing": "Signing in means agreeing",
-"userAgreement": "User Agreement",
-"privacyAgreement": "Privacy Agreement",
-"loginPleaseBePatient": "Login in progress, please be patient"
-},
+	"work_index": {
+		"pleaseEnter": "Please enter",
+		"account": "Account",
+		"password": "password",
+		"verificationCode": "Verification Code",
+		"logIn": "Login",
+		"signingInMeansAgreeing": "Signing in means agreeing",
+		"userAgreement": "User Agreement",
+		"privacyAgreement": "Privacy Agreement",
+		"loginPleaseBePatient": "Login in progress, please be patient"
+	},
 
-"common": {
-"pleaseEnter": "Please enter",
-"account": "Account",
-"password": "password",
-"verificationCode": "Verification Code",
-"logIn": "Login",
-"signingInMeansAgreeing": "Signing in means agreeing",
-"userAgreement": "User Agreement",
-"privacyAgreement": "Privacy Agreement",
-"loginPleaseBePatient": "Login in progress, please be patient",
-"createTime": "Creation Time",
-"nickName": "nickname",
-"sub": "Submit",
-"notNull": "Cannot be empty!",
-"upd": "Modify",
-"updSuccess": "Updated successfully",
-"nikeName": "Nickname",
-"mail": "Mailbox"
-},
-"work_index": {
-"systemManagement": "System Management",
-"announcement": "Announcement",
-"cardNumberInquiry": "Card Number Inquiry",
-"intelligentDiagnosis": "Intelligent Diagnosis",
-"usageRecord": "Usage Record",
-"sessionLog": "Session Log",
-"businessHandling": "Business Handling"
-},
-"mine_index": {
-"about": "About us",
-"settings": "App Settings",
-"askExit": "Are you sure you want to log out and exit the system?",
-"construction": "Module construction",
-"clickLogin": "Click to log in",
-"username": "Username",
-"info": "Personal Information",
-"exchange": "Exchange Group",
-"service": "Online customer service",
-"feedback": "Feedback Community",
-"likeUs": "like us",
-"edit": "Edit Data",
-"problem": "FAQ"
+	"common": {
+		"synchronization": "Information synchronization",
+		"copySuccess": "Copy successful",
+		"pleaseEnter": "Please enter",
+		"account": "Account",
+		"password": "password",
+		"verificationCode": "Verification Code",
+		"logIn": "Login",
+		"signingInMeansAgreeing": "Signing in means agreeing",
+		"userAgreement": "User Agreement",
+		"privacyAgreement": "Privacy Agreement",
+		"loginPleaseBePatient": "Login, please be patient,heart waiting",
+		"createTime": "Creation Time",
+		"nickName": "nickname",
+		"sub": "Submit",
+		"notNull": "Cannot be empty!",
+		"upd": "Modify",
+		"edie": "Editor",
+		"updSuccess": "Updated successfully",
+		"nikeName": "Nickname",
+		"mail": "Mailbox",
+		"sessionCreationTime": "session creation time",
+		"success": "The operation was successful!",
+		"error": "Operation failed...",
+		"approved": "I have read",
+		"pleaseRead": "Please read the User Agreement and Privacy Agreement first! And choose I have read!",
+		"belongsTo": "Belongs to the company",
+		"noDataFound": "No matching data found!",
+		"copy": "Copy",
+		"timeFormatNo": "Please enter the correct time format!",
+		"refresh": "refresh",
+		"sure": "OK",
+		"workIndex": "Return to Workbench"
+	},
+	"work_index": {
+		"systemManagement": "System Management",
+		"announcement": "Announcement",
+		"cardNumberInquiry": "Card Information Inquiry",
+		"intelligentDiagnosis": "Intelligent Diagnosis",
+		"usageRecord": "Usage Record",
+		"sessionLog": "Session Log",
+		"businessHandling": "Business Handling"
+	},
+	"mine_index": {
+		"about": "About us",
+		"settings": "App Settings",
+		"askExit": "Are you sure you want to log out and exit the system?",
+		"construction": "Module construction",
+		"clickLogin": "Click to log in",
+		"username": "Username",
+		"info": "Personal Information",
+		"exchange": "Exchange Group",
+		"service": "Online customer service",
+		"feedback": "Feedback Community",
+		"likeUs": "like us",
+		"edit": "Edit Data",
+		"problem": "FAQ"
 
-},
-"mine_info_index": {
-"phoneNumber": "Mobile phone number",
-"mail": "Mailbox",
-"post": "post",
-"role": "Role",
-"gender": "gender",
-"ask":{
-"phoneNumber": "Please enter a correct phone number",
-"mail": "Please enter a valid email address"
-}
-},
-"setting_index": {
-"changePassword": "Change Password",
-"checkUpdates": "Check for updates",
-"clearCache": "clear cache",
-"signOut": "Log out"
-},
-"about_index": {
-"version": "version information",
-"ofEmail": "official email",
-"weChat": "WeChat",
-"noPublic": "public account",
-"ofWebsite": "Official Website"
-},
-"pwd_index": {
-"ordPwd": "old password",
-"newPwd": "New Password",
-"verifyPwd": "Confirm password"
+	},
+	"mine_info_index": {
+		"phoneNumber": "Mobile phone number",
+		"mail": "Mailbox",
+		"post": "post",
+		"role": "Role",
+		"gender": "gender",
+		"ask":{
+			"phoneNumber": "Please enter a correct phone number",
+			"mail": "Please enter a valid email address"
+		}
+	},
+	"setting_index": {
+		"changePassword": "Change Password",
+		"checkUpdates": "Check for updates",
+		"clearCache": "clear cache",
+		"signOut": "Log out"
+	},
+	"about_index": {
+		"version": "version information",
+		"ofEmail": "official email",
+		"weChat": "WeChat",
+		"noPublic": "public account",
+		"ofWebsite": "Official Website"
+	},
+	"pwd_index": {
+		"ordPwd": "old password",
+		"newPwd": "New Password",
+		"verifyPwd": "Confirm password"
 
-}
+	}
 
 
 

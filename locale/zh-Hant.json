@@ -1,12 +1,184 @@
 {
 
+	"tabbar": {
+		"index": "首頁",
+		"work": "工作台",
+		"notify": "消息",
+		"mine": "我的"
+	},
+	"cardApiBusinessHandling": {
+		"title":"業務辦理",
+		"openClose":"停復機 & 斷開網",
+		"gprsReset":"網絡重置",
+		"shutdown":"斷開網",
+		"stop":"停復機",
+		"flexibleChange":"靈活變更狀態",
+		"tip":{
+			"reset":"遇到上網功能異常的時候可以通過調用該接口來重置恢復GPRS上網功能；（選擇 是 時執行）",
+			"openStop":"停復機：對卡號執行 停機 復機 操作；（PS：長期停機可能會產生停機保號費用，且可能會銷戶卡號！具體根據上游運營商而定！）",
+			"openClose":"斷開網：對卡號執行 關閉網絡連接 打開網絡連接 操作；（PS：該功能類似手機數據流量打開關閉。）",
+			"flexibleChange":"靈活變更卡狀態：適配部分上游API，（PS：且停機原因為主動申請停機時才能複機 其他原因需要聯繫客戶經理處理！）",
+			"textareaP":"請輸入 ICCID 多卡號使用換行隔開！\n單次大於100條數據請前往後台操作！"
+		},
+		"ask":{
+			"upd":"是否確認 針對上傳卡號執行 ",
+			"txUpd":"是否確認 卡號執行 "
+		},
+		"rs":{
+			"flexibleChange":"請選擇需要 靈活變更的狀態！",
+			"openClose":"請選擇需要 停復機 或 斷開網的操作類型！",
+			"gprsReset":"請選擇是否需要 執行 網絡重置！",
+			"iccids":"請輸入需要操作卡號"
+		}
+	},
+	"usedRecord": {
+		"MMdd": "日期",
+		"month_used": "月用量",
+		"day_used": "日用量"
+	},
+	"card_index": {
+		"editCard": "更新卡信息",
+		"ask": {
+			"upd":"Confirm update",
+			"cardDivid_2": "The piece of data is divided into"
+		},
+		"updForm":{
+			"remarks":"備註：",
+			"updateNotFilled":"更新未填寫屬性：",
+			"deliver_date":"發貨日期：",
+			"customize_grouping":"自定義分組："
+		}
+	},
+	"cardInfoDetails":{
+		"copyCardInfo":"複製 基礎信息",
+		"tFrom":{
+			"operator":"運營商",
+			"roaming_country":"漫遊國家",
+			"internet_signal":"網絡信號",
+			"ip_attribution":"IP歸屬地",
+			"status_show_id":"卡狀態",
+			"status_id":"狀態描述",
+			"type":"卡類型",
+			"network_type":"網絡類型",
+			"nedd_real_name":"需要實名",
+			"w_real_name":"已實名",
+			"deliver_date":"發貨日期",
+			"activate_date":"激活時間",
+			"traffic_sync_time":"用量同步時間",
+			"state_sync_time":"狀態同步時間",
+			"channel_id":"所屬通道",
+			"package_id":"所屬資費組",
+			"u_code":"所屬用卡人",
+			"w_polling":"輪詢",
+			"automatic_renewal":"自動續費",
+			"w_sms":"短信",
+			"w_voice":"語音",
+			"w_network_break":"未訂購斷網",
+			"shutdown_threshold":"停機閾值",
+			"prodinsteff_time":"生效時間",
+			"prodinstexp_time":"失效時間",
+			"connection_status":"網絡狀態",
+			"w_pool":"流量池",
+			"balance":"預存餘額",
+			"payment_key":"支付密碼",
+			"customize_grouping":"分組",
+			"remarks":"備註",
+			"first_time_using":"首次使用",
+			"create_time":"創建時間",
+			"storage_date":"入庫日期",
+			"delivery_date":"出庫日期"
+		}
+	},
+	"diagnosis":{
+		"oneDiagnosis":"一鍵診斷",
+		"rs":{
+			"value":"查詢卡號 ",
+			"length":"請輸入大於4位數的匹對卡號 ！"
+		}
+	},
+	"dsEcV5":{
+		"dTitle":{
+			"i_1":"診斷中",
+			"i_2":"診斷完成"
+		},
+		"table":{
+			"i_1":"服務類型",
+			"i_2":"APN",
+			"i_3":"狀態",
+			"i_4":"狀態變更時間"
+		},
+		"te1":{
+			"title":"SIM卡狀態",
+			"i_1":"卡狀態",
+			"i_2":"停機原因",
+			"i_3":"設備狀態",
+			"i_3top":"開機表示設備連接並附著基站",
+			"i_4":"是否凍結",
+			"solution":"SIM卡狀態為可測試、待激活、已激活狀態可以正常通訊"
+		},
+		"te2":{
+			"title":"通信服務",
+			"titletop":"由於網絡波動和延遲，該結果可能存在一定誤差，僅供參考，建議以終端的實際狀態為準"
+		},
+		"te3":{
+			"title":"策略限制",
+			"i_1":"超區域",
+			"i_2":"機卡分離",
+			"i_3":"限制區域："
+		},
+		"te4":{
+			"title":"狀態變更記錄"
+		},
+		"suggestedSolution":"建議解決方案："
+
+	},
+
+	"cardInfoModule": {
+		"cardSession": "會話信息",
+		"cardApiBusiness": "變更記錄",
+		"cbefore": " 變更前 ",
+		"cafterward": " 變更後 ",
+		"source": " 來源 ",
+		"onlyCreateDate": " 過濾重複會話時間 ",
+		"last30Days": "最近30天",
+		"flowRecord": "流量使用",
+		"session": {
+			"accessMode": "無線接入模式",
+			"accessMethod": "接入方式",
+			"onlineStatus": "在線狀態",
+			"iPAddress": "IP地址",
+			"hint1": "請核對API信息（未產生用量不會有在線記錄！）",
+			"hint2": "僅支持 上游開放查詢會話信息API獲取",
+			"error1": "暫未獲取到會話信息"
+		},
+		"oneLink_ECV5": {
+			"label_0": "APN",
+			"label_1": "在線狀態",
+			"label_2": "IP",
+			"label_3": "IPV6 地址前綴",
+			"label_4": "IPV6 地址接口",
+			"label_5": "會話創建時間",
+			"label_6": "接入方式",
+			"label_7": "平台記錄時間"
+		}
+	},
+
+
+	"myTabbar":{
+		"t1": "首頁",
+		"t2": "工作台",
+		"t3": "消息",
+		"t4": "我的"
+	},
+
+
 	"locale":{
 		"auto": "系統",
 		"en": "English",
-		"zh-hans": "简体中文",
+		"zh-hans": "簡體中文",
 		"zh-hant": "繁體中文"
-	},	
-	
+	},
+
 	"schema":{
 		"name": "姓名",
 		"add": "新增",
@@ -41,7 +213,7 @@
 		"privacyAgreement": "隱私協議",
 		"loginPleaseBePatient": "登錄中，請耐心等待"
 	},
-	
+
 	"work_index":{
 		"pleaseEnter": "請輸入 ",
 		"account": "賬號",
@@ -53,8 +225,10 @@
 		"privacyAgreement": "隱私協議",
 		"loginPleaseBePatient": "登錄中，請耐心等待"
 	},
-	
+
 	"common":{
+		"synchronization":"信息同步中",
+		"copySuccess":"複製成功",
 		"pleaseEnter": "請輸入 ",
 		"account": "賬號",
 		"password": "密碼",
@@ -63,20 +237,33 @@
 		"signingInMeansAgreeing": "登錄即代表同意",
 		"userAgreement": "用戶協議",
 		"privacyAgreement": "隱私協議",
-		"loginPleaseBePatient": "登錄中，請耐心等待",
+		"loginPleaseBePatient": "登錄中，請耐,心等待",
 		"createTime": "創建時間",
 		"nickName": "暱稱",
 		"sub":"提交",
 		"notNull":"不能為空!",
 		"upd":"修改",
+		"edie":"編輯",
 		"updSuccess": "修改成功",
 		"nikeName": "暱稱",
-		"mail": "郵箱"
+		"mail": "郵箱",
+		"sessionCreationTime":"會話創建時間",
+		"success": "操作成功！",
+		"error": "操作失敗……",
+		"approved":"我已閱讀",
+		"pleaseRead":"請先閱讀《用戶協議》與《隱私協議》！並選擇 我已閱讀！",
+		"belongsTo":"所屬企業",
+		"noDataFound":"未找到匹對數據！",
+		"copy": "複製",
+		"timeFormatNo": "請輸入正確的時間格式！",
+		"refresh":"刷新",
+		"sure":"確定",
+		"workIndex": "返回工作台"
 	},
 	"work_index":{
 		"systemManagement": "系統管理",
 		"announcement": "公告",
-		"cardNumberInquiry": "卡號查詢",
+		"cardNumberInquiry": "卡信息查詢",
 		"intelligentDiagnosis": "智能診斷",
 		"usageRecord": "用量記錄",
 		"sessionLog": "會話記錄",
@@ -96,7 +283,7 @@
 		"likeUs": "點讚我們",
 		"edit": "編輯資料",
 		"problem": "常見問題"
-		
+
 	},
 	"mine_info_index":{
 		"phoneNumber": "手機號碼",
@@ -126,28 +313,28 @@
 		"ordPwd":"舊密碼",
 		"newPwd":"新密碼",
 		"verifyPwd":"確認密碼"
-		
+
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

@@ -2,10 +2,12 @@
   import config from './config'
   import store from '@/store'
   import { getToken } from '@/utils/auth'
+  import tools from '@/utils/iotos/tools'
 
   export default {
     onLaunch: function() {
-      this.initApp()
+      uni.hideTabBar();
+      this.initApp();
     },
     methods: {
       // 初始化应用
@@ -21,8 +23,12 @@
         this.globalData.config = config
       },
       checkLogin() {
-        if (!getToken()) {
-          this.$tab.reLaunch('/pages/login') 
+        if (tools.isNull(getToken())) {
+          uni.setStorageSync('selectedIndex', 2);
+          this.$tab.reLaunch('/pages/IoTOS')
+        }else{
+          //
+
         }
       }
     }
@@ -31,4 +37,12 @@
 
 <style lang="scss">
   @import '@/static/scss/index.scss'
+</style>
+<style>
+.uni-app--showleftwindow  +  .uni-tabbar-bottom {
+  display: none;
+}
+.content{
+  padding-bottom: calc(var(--window-bottom) + 20px);
+}
 </style>

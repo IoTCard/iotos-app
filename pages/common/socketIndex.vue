@@ -32,7 +32,7 @@ export default {
 			listText:[],
 			showPlacard: false,
 			notice: {},
-			ip:"127.0.0.1",
+			ip:"imsocket.iotos.top",
 			port:"8072",
 			socket:null,
 			username:null,
@@ -43,7 +43,7 @@ export default {
 	computed: {
 
 	},
-	created() {
+  mounted() {
 		this.loginSocket(uni.getStorageSync("userName"), getToken());//登录账号和 token
 	},
 	methods: {
@@ -61,7 +61,7 @@ export default {
 				//console.log('WebSocket连接已打开！');
 				
 			});
-		
+
 			uni.onSocketError(function(res) { //监听WebSocket错误。
 				console.log('WebSocket连接打开失败，请检查！');
 			});

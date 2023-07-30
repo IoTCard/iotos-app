@@ -1,64 +1,79 @@
 <template>
-	<view class="container">
+    <view>
 
-		<socketIndex ></socketIndex>
+      <u-swipe-action>
 
-		<image class="logo" style="margin: auto;margin-left: 38%;" src="@/static/logo.png"></image>
+        <u-swipe-action-item @click="clickSwipe"	 v-for="(item, index) in indexList" :options="options2">
+          <view class="swipe-action u-border-top u-border-bottom">
+            <view class="swipe-action__content">
+              <text class="swipe-action__content__text">
+                <ul class="custom-ul">
+                  <li><div class="sTitle">标题：</div><div>{{ tools.getTitle(item) }}</div></li>
+                  <li><div class="sTitle">创建者：</div><div>{{ item.create_by }}</div></li>
+                  <li><div class="sTitle">时间：</div><div>{{ tools.formatMsgDate(item.time) }}</div></li>
+                </ul>
+              </text>
+            </view>
+          </view>
+        </u-swipe-action-item>
 
-		<view class="text-area">
-			<text class="title">IoTOS-App</text>
-		</view>
-		<u--text type="primary" text="请给IoTOS的开源项目一个 Star，\n 这也是对项目的认可与贡献： "></u--text>
-		<u-gap height="10" ></u-gap>
-		<u--text type="primary" text="1. 后台：https://gitee.com/chinaiot/iotos \n 2. 移动端App：https://gitee.com/chinaiot/iotos-app  \n 3. IM网络通讯：https://gitee.com/chinaiot/iotos-im "></u--text>
-		<u-gap height="10" ></u-gap>
-		<u--text type="warning" text="文档部署教程：http://www.iotos.top/docs/guide/deploymentService.html"></u--text>
-		<u-gap height="10" ></u-gap>
-		<u--text type="error" text="可直接分享阿里云镜像 10分钟内搭建 \n 属于您的 IoTOS 添加下方好友进一步交流"></u--text>
+      </u-swipe-action>
 
-		<image style="width: 100%;margin-top: 30px;" src="@/static/images/banner/gzhewm.gif"></image>
-		<!-- <u-calendar :show="show"></u-calendar>
-	<u-button @click="show = true">打开</u-button> -->
 
-		
-
+    <myTabbar></myTabbar>
 	</view>
 </template>
 
 <script>
-import { getToken } from '../utils/auth';
-import socketIndex from './common/socketIndex';
+import myTabbar from '../components/tabbar/myTabbar'
+import tools from "../utils/iotos/tools";
 
 
 
 export default {
 	data() {
 		return {
-			show: false,
+      tools:tools,
+      form:{
+        name:'张三',
+      },
+      options2: [{
+        text: '详情',
+        style: {
+          backgroundColor: '#3c9cff'
+        }
+      },{
+        text: '忽略',
+        style: {
+          backgroundColor: '#888'
+        }
+      }],
+      indexList: [
+       {
+          title:'行业交流群',
+          time:'2023-07-26 22:28:08',
+          create_by:'iotos',
+        },{
+          title:'IoTOS–官方交流群',
+          time:'2023-07-21 22:28:08',
+          create_by:'admin',
+        },{
+          title:'壹、贰、叁、肆、伍、陆、柒、捌、玖、拾壹、贰、叁、肆、伍、陆、柒、捌、玖、拾',
+          time:'2023-07-27 22:28:08',
+          create_by:'admin',
+        }
+      ],
 		}
 	},
 	components: {
-		socketIndex
+    myTabbar
 	},
-	onLoad() {
-		let systemInfo = uni.getSystemInfoSync();
 
-		this.systemLocale = systemInfo.language;
-		this.applicationLocale = uni.getLocale();
-		//console.log(this.applicationLocale);
-		//根据当前系统语言进行加载   【登录界面可设置】
-
-		this.isAndroid = systemInfo.platform.toLowerCase() === 'android';
-		uni.onLocaleChange((e) => {
-			this.applicationLocale = e.locale;
-		})
-		
-		
-	},
 	methods: {
 
-
-		
+    clickSwipe(iten){
+        console.log(iten)
+    },
 
 
 		//关闭公告
@@ -70,51 +85,42 @@ export default {
 		  if(url!=null){
 			  console.info("jump = = = = " )
 		  }
-		},
-		onLocaleChange(e) {
-			if (this.isAndroid) {
-				uni.showModal({
-					content: this.$t('index.language-change-confirm'),
-					success: (res) => {
-						if (res.confirm) {
-							uni.setLocale(e.code);
-						}
-					}
-				})
-			} else {
-				uni.setLocale(e.code);
-				this.$i18n.locale = e.code;
-			}
 		}
 	}
 
 }
 </script>
 
-<style>
-	.content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
+<style lang="scss" scoped>
+.u-page {
+  padding: 0;
+}
 
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin-top: 200rpx;
-		margin-left: auto;
-		margin-right: auto;
-		margin-bottom: 50rpx;
-	}
+.u-demo-block__title {
+  padding: 10px 0 2px 15px;
+}
 
-	.text-area {
-		display: flex;
-		justify-content: center;
-	}
+.swipe-action {
+  &__content {
+    border-bottom: 1px solid rgb(25, 137, 250);
+    &__text {
+      font-size: 15px;
+      color: $u-main-color;
+      padding-left: 30rpx;
+    }
+  }
+}
 
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
-	}
+.sTitle{
+  width: 80px;
+  float: left;
+}
+.custom-ul {
+  list-style: none; /* 去掉默认的列表样式 */
+  padding: 0px; /* 去掉默认的内边距 */
+  margin-left: 10px;
+}
+.custom-ul li{
+  height: 25px;
+}
 </style>

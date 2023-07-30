@@ -60,7 +60,7 @@ tools.Decrypt = function (text, key, iv) {
 }
 
 tools.open = function (_this, Message) {
-  _this.$notify.warning(Message);
+  _this.$modal.showToast(Message);
 }
 
 
@@ -81,7 +81,7 @@ tools.VerificationsText_wx = function (_this, _val, Message) {
   let bool = tools.isNull(_val);
   //console.log(bool);
   if (bool == false) {
-    _this.$notify.error(Message);
+    _this.$modal.showToast(Message);
   }
   return bool;
 }
@@ -101,10 +101,7 @@ tools.VerificationsArr = function (_this, _arr, Message) {
  * @returns
  */
 tools.isNull = function (val) {
-  //console.log(val)
-  //console.log(Object.is(val, NaN))
   if (Object.is(val, NaN)) {
-    //console.log("fffffff")
     return false;
   } else {
     val = tools.isNumber(val) == true ? val + "" : val;//如果是一个数字类型过滤成字符串 && isNaN(val)==false  && val.trim() != ""
@@ -113,7 +110,9 @@ tools.isNull = function (val) {
 }
 
 
-
+tools.encryptSy = function (map) {
+  return tools.encrypt(JSON.stringify(map));
+}
 
 /**
  * obj 判断是否是一个数（number）
@@ -136,18 +135,20 @@ tools.isNumber = function (obj) {
  * @param: FalsePar = 取消时 执行 函数 参数
  */
 tools.openAsk = function (_this, _type, Message, TrueFun, TrunPar, FalseFun, FalsePar) {
-  _type = tools.isNull(_type) ? _type : "info";
-  _this.$confirm(Message, {
-    confirmButtonText: '确定',
-    cancelButtonText: '取消',
-    type: _type
-  }).then(() => {
-    TrueFun(TrunPar)
-  }).catch(() => {
-    if (FalseFun != null) {
-      FalseFun(FalsePar);
+  uni.showModal({
+    content: Message,
+    cancelText: "取消", // 取消按钮的文字
+    confirmText: "确认", // 确认按钮的文字
+    success: (res) => {
+      if (res.confirm) {
+        TrueFun(TrunPar)
+      }else {
+        if (FalseFun != null) {
+          FalseFun(FalsePar);
+        }
+      }
     }
-  });
+  })
 }
 
 
@@ -231,14 +232,18 @@ tools.toFixed = function (number, decimal) {
  * 针对文本域 换行符切割 过滤前后空格获取数组
  * @param lets
  */
-tools.textareaGet = function (vars) {
-  vars = vars.split(/[\s\n]/);
-  //console.log(vars);
-  vars = $.grep(vars, function (x) {
-    return $.trim(x).length > 0;
+tools.textareaGet = function (str) {
+  // 通过换行符 '\n' 将字符串切割成数组
+  var lines = str.split('\n');
+  // 使用map函数处理每个元素，去除前后空格
+  var trimmedLines = lines.map(function(line) {
+    return line.trim();
   });
-  //console.log(vars);
-  return vars;
+  // 使用filter函数过滤掉空字符串
+  var nonEmptyLines = trimmedLines.filter(function(line) {
+    return line !== "";
+  });
+  return nonEmptyLines;
 }
 
 
@@ -563,9 +568,9 @@ tools.NumberDiv = function (arg1, arg2, digit) {
 tools.MessageShow = function (_this, _message, _type) {
   _type = tools.isNull(_type) ? _type : "";
   if (_type != 'error') {
-    _this.$notify.warning(_message)
+    _this.$modal.showToast(_message)
   } else {
-    _this.$notify.error(_message)
+    _this.$modal.showToast(_message)
   }
 }
 
@@ -765,13 +770,13 @@ tools.KeyUP_Cler = function (_this, $val, df_val, MaxLeng, Msg) {
   //console.log($bool)
   if (!$bool) {
     Msg = tools.isNull(Msg) ? Msg : "不能有特殊字符";
-    _this.$message.error(Msg);
+    _this.$modal.showToast(Msg);
     $val = window["df_val"];
   } else {
     window["df_val"] = $val;
   }//赋值默认val
   if (tools.isNull($val) && $val.length > MaxLeng) {
-    _this.$message.error("最大长度为[" + MaxLeng + "] !");
+    _this.$modal.showToast("最大长度为[" + MaxLeng + "] !");
     $val = $val.substring(0, MaxLeng);
   }
   return $bool;
@@ -1212,16 +1217,40 @@ tools.comptime = function (firstDate, lastDate) {
   return Rval;
 }
 
-tools.copyThat = function (data, _this) {
-  let url= data;
+/**
+ * 复制
+ * @param textToCopy
+ * @param _this
+ */
+tools.copyThat = function (textToCopy , _this) {
+  /*let url= textToCopy;
   let oInput= document.createElement('textarea');
   oInput.value= url;
   document.body.appendChild(oInput);
   oInput.select(); // 选择对象;
   //console.log(oInput.value)
   document.execCommand("Copy"); // 执行浏览器复制命令
-  _this.$message.success(_this.$t("common.copySuccess"));
-  oInput.remove()
+  _this.$modal.showToast(_this.$t("common.copySuccess"));
+  oInput.remove()*/
+
+  // 调用uni.setClipboardData方法复制文本到剪贴板
+  uni.setClipboardData({
+    data: textToCopy,
+    success: () => {
+      uni.showToast({
+        title: _this.$t("common.copySuccess"),
+        icon: 'success'
+      });
+    },
+    fail: () => {
+      uni.showToast({
+        title: _this.$t("common.copyFail"),
+        icon: 'none'
+      });
+    }
+  });
+
+
 }
 
 
@@ -1233,6 +1262,17 @@ tools.copyThat = function (data, _this) {
 tools.windowOpen = function (url, target) {
   window.open(url, target);
 }
+
+/**
+ * 提示
+ * @param _this
+ * @param msg
+ */
+tools.showToast = function (_this, msg) {
+  _this.$modal.showToast(msg);
+}
+
+
 
 /**
  * 针对文本域 换行符切割 过滤前后空格获取数组 [不重复的数据]
@@ -1491,6 +1531,77 @@ tools.formatTimestamp =  function(timestamp) {
   var seconds = ('0' + date.getSeconds()).slice(-2);
   var formattedDate = year + '/' + month + '/' + day + ' ' + hours + ':' + minutes + ':' + seconds;
   return formattedDate;
+}
+
+
+tools.navigateTo =  function(_this,url) {
+  _this.$tab.navigateTo(url)
+}
+
+/**
+ * 格式化时间
+ * @param dateTime
+ * @returns {string|*}
+ */
+tools.formatMsgDate =  function(dateTime) {
+  const currentDateTime = new Date();
+  const inputDateTime = new Date(dateTime);
+  // 获取当前日期的年、月、日
+  const currentYear = currentDateTime.getFullYear();
+  const currentMonth = currentDateTime.getMonth();
+  const currentDay = currentDateTime.getDate();
+
+  // 获取输入日期的年、月、日
+  const inputYear = inputDateTime.getFullYear();
+  const inputMonth = inputDateTime.getMonth();
+  const inputDay = inputDateTime.getDate();
+
+  // 如果输入日期为当天
+  if (currentYear === inputYear && currentMonth === inputMonth && currentDay === inputDay) {
+    const hours = inputDateTime.getHours();
+    const minutes = inputDateTime.getMinutes();
+    const period = hours >= 12 ? '下午' : '上午';
+    return `${period} ${hours}:${minutes}`;
+  }
+
+  // 如果输入日期为前一天
+  const previousDateTime = new Date(currentYear, currentMonth, currentDay - 1);
+  if (previousDateTime.getFullYear() === inputYear && previousDateTime.getMonth() === inputMonth && previousDateTime.getDate() === inputDay) {
+    return '昨天';
+  }
+
+  // 其他情况，显示两天前是周几
+  const daysDiff = Math.floor((currentDateTime - inputDateTime) / (1000 * 60 * 60 * 24));
+  if (daysDiff>=1 && daysDiff <= 2) {
+    const weekdayNames = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
+    const weekday = inputDateTime.getDay();
+    return `${weekdayNames[weekday]}`;
+  }
+  // 返回月日
+  return `${inputMonth}月${inputDay}日`;
+}
+
+/**
+ * 获取消息label
+ * @param item
+ * @returns {string|string}
+ */
+tools.getIMLabel =  function(item) {
+  let lab = tools.isNull(item) && item.newmsgCount>0?'['+item.newmsgCount+'条] ':'';
+  lab += item.lastMsg;
+  return lab;
+}
+/**
+ * 获取消息 title
+ * @param item
+ * @returns {string|string}
+ */
+tools.getTitle =  function(item) {
+  let title = item.title;
+  if(title.length>16){
+    title = title.substring(0,15)+'...';
+  }
+  return title;
 }
 
 

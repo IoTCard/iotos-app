@@ -1,5 +1,178 @@
 {
 
+	"tabbar": {
+		"index": "首頁",
+		"work": "工作台",
+		"notify": "消息",
+		"mine": "我的"
+	},
+	"cardApiBusinessHandling": {
+		"title":"业务办理",
+		"openClose":"停复机 & 断开网",
+		"gprsReset":"网络重置",
+		"shutdown":"断开网",
+		"stop":"停复机",
+		"flexibleChange":"灵活变更状态",
+		"tip":{
+			"reset":"遇到上网功能异常的时候可以通过调用该接口来重置恢复GPRS上网功能；（选择 是 时执行）",
+			"openStop":"停复机：对卡号执行 停机 复机 操作；（PS：长期停机可能会产生停机保号费用，且可能会销户卡号！具体根据上游运营商而定！）",
+			"openClose":"断开网：对卡号执行 关闭网络连接 打开网络连接 操作；（PS：该功能类似手机数据流量打开关闭。）",
+			"flexibleChange":"灵活变更卡状态：适配部分上游API，（PS：且停机原因为主动申请停机时才能复机 其他原因需要联系客户经理处理！）",
+			"textareaP":"请输入 ICCID 多卡号使用换行隔开！\n单次大于100条数据请前往后台操作！"
+		},
+		"ask":{
+			"upd":"是否确认 针对上传卡号执行 ",
+			"txUpd":"是否确认 卡号执行 "
+		},
+		"rs":{
+			"flexibleChange":"请选择需要 灵活变更的状态！",
+			"openClose":"请选择需要 停复机 或 断开网的操作类型！",
+			"gprsReset":"请选择是否需要 执行 网络重置！",
+			"iccids":"请输入需要操作卡号"
+		}
+	},
+	"usedRecord": {
+		"MMdd": "日期",
+		"month_used": "月用量",
+		"day_used": "日用量"
+	},
+	"card_index": {
+		"editCard": "更新卡信息",
+		"ask": {
+			"upd":"Confirm update",
+			"cardDivid_2": "The piece of data is divided into"
+		},
+		"updForm":{
+			"remarks":"备注：",
+			"updateNotFilled":"更新未填写属性：",
+			"deliver_date":"发货日期：",
+			"customize_grouping":"自定义分组："
+		}
+	},
+	"cardInfoDetails":{
+		"copyCardInfo":"复制 基础信息",
+		"tFrom":{
+			"operator":"运营商",
+			"roaming_country":"漫游国家",
+			"internet_signal":"网络信号",
+			"ip_attribution":"IP归属地",
+			"status_show_id":"卡状态",
+			"status_id":"状态描述",
+			"type":"卡类型",
+			"network_type":"网络类型",
+			"nedd_real_name":"需要实名",
+			"w_real_name":"已实名",
+			"deliver_date":"发货日期",
+			"activate_date":"激活时间",
+			"traffic_sync_time":"用量同步时间",
+			"state_sync_time":"状态同步时间",
+			"channel_id":"所属通道",
+			"package_id":"所属资费组",
+			"u_code":"所属用卡人",
+			"w_polling":"轮询",
+			"automatic_renewal":"自动续费",
+			"w_sms":"短信",
+			"w_voice":"语音",
+			"w_network_break":"未订购断网",
+			"shutdown_threshold":"停机阈值",
+			"prodinsteff_time":"生效时间",
+			"prodinstexp_time":"失效时间",
+			"connection_status":"网络状态",
+			"w_pool":"流量池",
+			"balance":"预存余额",
+			"payment_key":"支付密码",
+			"customize_grouping":"分组",
+			"remarks":"备注",
+			"first_time_using":"首次使用",
+			"create_time":"创建时间",
+			"storage_date":"入库日期",
+			"delivery_date":"出库日期"
+		}
+	},
+	"diagnosis":{
+		"oneDiagnosis":"一键诊断",
+		"rs":{
+			"value":"查询卡号 ",
+			"length":"请输入大于4位数的匹对卡号 ！"
+		}
+	},
+	"dsEcV5":{
+		"dTitle":{
+			"i_1":"诊断中",
+			"i_2":"诊断完成"
+		},
+		"table":{
+			"i_1":"服务类型",
+			"i_2":"APN",
+			"i_3":"状态",
+			"i_4":"状态变更时间"
+		},
+		"te1":{
+			"title":"SIM卡状态",
+			"i_1":"卡状态",
+			"i_2":"停机原因",
+			"i_3":"设备状态",
+			"i_3top":"开机表示设备连接并附着基站",
+			"i_4":"是否冻结",
+			"solution":"SIM卡状态为可测试、待激活、已激活状态可以正常通讯"
+		},
+		"te2":{
+			"title":"通信服务",
+			"titletop":"由于网络波动和延迟，该结果可能存在一定误差，仅供参考，建议以终端的实际状态为准"
+		},
+		"te3":{
+			"title":"策略限制",
+			"i_1":"超区域",
+			"i_2":"机卡分离",
+			"i_3":"限制区域："
+		},
+		"te4":{
+			"title":"状态变更记录"
+		},
+		"suggestedSolution":"建议解决方案："
+
+	},
+
+	"cardInfoModule": {
+		"recordTime": "选择日期",
+		"cardSession": "会话信息",
+		"cardApiBusiness": "变更记录",
+		"cbefore": " 变更前 ",
+		"cafterward": " 变更后 ",
+		"source": " 来源 ",
+		"onlyCreateDate": " 过滤重复会话时间 ",
+		"last30Days": "最近30天",
+		"flowRecord": "流量使用",
+		"session": {
+			"accessMode": "无线接入模式",
+			"accessMethod": "接入方式",
+			"onlineStatus": "在线状态",
+			"iPAddress": "IP地址",
+			"hint1": "请核对API信息（未产生用量不会有在线记录！）",
+			"hint2": "仅支持 上游开放查询会话信息API获取",
+			"error1": "暂未获取到会话信息"
+		},
+		"oneLink_ECV5": {
+			"label_0": "APN",
+			"label_1": "在线状态",
+			"label_2": "IP",
+			"label_3": "IPV6 地址前缀",
+			"label_4": "IPV6 地址接口",
+			"label_5": "会话创建时间",
+			"label_6": "接入方式",
+			"label_7": "平台记录时间"
+		}
+	},
+
+
+	"myTabbar":{
+		"t1": "首頁",
+		"t2": "工作台",
+		"t3": "消息",
+		"t4": "我的"
+	},
+
+
 	"locale":{
 		"auto": "系统",
 		"en": "English",
@@ -55,6 +228,11 @@
 	},
 	
 	"common":{
+		"synced":"已同步信息",
+		"returnedMessages":"返回信息",
+		"synchronization":"信息同步中",
+		"copySuccess":"复制成功",
+		"copyFail":"复制失败",
 		"pleaseEnter": "请输入 ",
 		"account": "账号",
 		"password": "密码",
@@ -69,16 +247,27 @@
 		"sub":"提交",
 		"notNull":"不能为空!",
 		"upd":"修改",
+		"edie":"编辑",
 		"updSuccess": "修改成功",
 		"nikeName": "昵称",
 		"mail": "邮箱",
+		"sessionCreationTime":"会话创建时间",
 		"success": "操作成功！",
-		"error": "操作失败……"
+		"error": "操作失败……",
+		"approved":"我已阅读",
+		"pleaseRead":"请先阅读《用户协议》与《隐私协议》！并选择 我已阅读！",
+		"belongsTo":"所属企业",
+		"noDataFound":"未找到匹对数据！",
+		"copy": "复制",
+		"timeFormatNo": "请输入正确的时间格式！",
+		"refresh":"刷新",
+		"sure":"确定",
+		"workIndex": "返回工作台"
 	},
 	"work_index":{
 		"systemManagement": "系统管理",
 		"announcement": "公告",
-		"cardNumberInquiry": "卡号查询",
+		"cardNumberInquiry": "卡信息查询",
 		"intelligentDiagnosis": "智能诊断",
 		"usageRecord": "用量记录",
 		"sessionLog": "会话记录",
