@@ -9,7 +9,7 @@
 
 ## 一款高效实用 IoTCard 管理 & 运营系统 - 移动端。
 
-> IoTOS 移动端；基于[RuoYi-App](https://gitee.com/y_project/RuoYi-App?_from=gitee_search) 开发 适配国际化多语言 UI 使用 [uView](https://gitee.com/umicro/uView) ，集成 [J-IM](https://gitee.com/xchao/j-im?_from=gitee_search)([t-io](https://gitee.com/tywo45/t-io?_from=gitee_search) 网络框架 谭聊原型核心)
+> IoTOS 移动端；基于[RuoYi-App](https://gitee.com/y_project/RuoYi-App?_from=gitee_search) 开发 适配国际化多语言 UI 使用 [uView](https://gitee.com/umicro/uView) ，集成 [J-IM](https://gitee.com/xchao/j-im?_from=gitee_search)
 
 
 中文 / [English](README.en.md)
