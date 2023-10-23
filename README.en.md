@@ -9,8 +9,7 @@
 
 ## An efficient and practical IoTCard management & operation system - mobile terminal.
 
-> IoTOS mobile terminal; based on [RuoYi-App](https://gitee.com/y_project/RuoYi-App?_from=gitee_search) to develop and adapt to international multilingual UI using [uView](https://gitee.com /umicro/uView), integrated [J-IM](https://gitee.com/xchao/j-im?_from=gitee_search)([t-io](https://gitee.com/tywo45/t- io?_from=gitee_search) network framework Tanchat prototype core)
-
+> IoTOS mobile terminal; based on [RuoYi-App](https://gitee.com/y_project/RuoYi-App?_from=gitee_search) to develop and adapt to international multilingual UI using [uView](https://gitee.com /umicro/uView), integrated [J-IM](https://gitee.com/xchao/j-im?_from=gitee_search)
 
 English / [中文](README.md)
 
